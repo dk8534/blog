@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign_up form</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+<body>
+<div class="container">
+  
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Alert!</strong> {{ message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endfor %}
+
+
+  <form class="container" method="POST">
+    {% csrf_token %}
+    <center>
+      <h1 style="background-color: yellow; border-radius:100px">Sign_up Form</h1>
+    </center>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputfname">First Name</label>
+        <input type="text" class="form-control" id="inputfname" placeholder="Enter your first name" name="fname" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputlname">Last Name</label>
+        <input type="text" class="form-control" id="inputlname" placeholder="Enter your last name" name="lname" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">E-mail</label>
+        <input type="email" class="form-control" id="inputPassword4" placeholder="Enter your email id" name="email" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Username">Username</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Username" name="Username" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Enter your Password" name="password" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputcPassword4">Confirm Password</label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password" name="cpassword" required>
+      </div>
+
+      <br>
+      <input type="submit" class="btn btn-primary" value="Sign in" />
+  </form>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</div>
+</body>
+
+</html>

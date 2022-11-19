@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+{% for i in post %}
+
+
+<div style="font-size:30px; color:aqua;"><li><b> {{ i.title }}</b></li></div>
+<div>{{ i.text }}</div><br>
+
+
+{% endfor %}
+
+{% endblock %}
