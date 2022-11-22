@@ -9,7 +9,8 @@
 <div style="font-size:30px; color:aqua;"><li><b> {{ i.title }}</b></li></div>
 <div>{{ i.text }}</div><br>
 
-
+{% empty %}
+<div class="container"><h2>No data found...</h2></div>
 {% endfor %}
 
 {% endblock %}

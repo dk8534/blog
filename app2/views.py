@@ -14,7 +14,7 @@ def signup(request):
         cpassword=request.POST['cpassword']
 
         if password != cpassword:
-            messages.error(request,"Confirm password did not match.")
+            messages.warning(request,"Confirm password did not match.")
             return redirect('/signup')
         else:
             user=User.objects.create_user(email=email,password=cpassword,first_name=fname,last_name=lname,username=username)
@@ -33,16 +33,16 @@ def signin(request):
 
         if user is not None:
             auth_login(request,user)
-            messages.success(request,"Successfully signin.")
+            messages.success(request,"You are Successfully signin.")
             return redirect('/')
         else:
-            messages.error(request,"Somthing went wrong.")
+            messages.warning(request,"Enter username and password didn't match.")
             return redirect('/signin')
 
     return render(request,'signin.html')
     
 def signout(request):
     auth_logout(request)
-    messages.warning(request,"Logout successfully.")
+    messages.warning(request,"You are Logout successfully.")
     return redirect('/')
 

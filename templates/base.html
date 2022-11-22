@@ -23,12 +23,12 @@
 
         {% if request.user.is_authenticated %}
         <li><button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><a
-              href="signout/">{{request.user.get_full_name}} - Logout</a></button></li>
+              href="signout/">{{request.user.get_full_name}} - Sign Out</a></button></li>
         {% else %}
         <li class="nav-item active"><button class="btn btn-outline-success btn-sm my-2 my-sm-0"><a class="nav-link"
-              href="signup/">Signup</a></button></li> &ensp;
+              href="signup/">Sign Up</a></button></li> &ensp;
         <li class="nav-item active"><button class="btn btn-outline-success btn-sm my-2 my-sm-0"><a class="nav-link"
-              href="signin/">Signin</a></button></li>&ensp;
+              href="signin/">Sign In</a></button></li>&ensp;
         <!-- -->
         
        
